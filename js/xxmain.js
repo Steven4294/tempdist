@@ -12,15 +12,12 @@
 5. FEATURE SLIDER INITI
 6.APPMAX SWIPER SLIDER JS
 7.APPMAX SWIPER USER REVIEW SLIDER JS
-8.APPMAX BANNER SCREENSHOT SLIDER JS
-9.APPMAX SUBSCRIBE DYNAMIC JS
-10.APPMAX CONTACT FORM DYNAMIC JS
-11.INIT JARALLAX
-12.APPMAX SKEWED APPS SCREEN
-13.APPMAX STICKU MENU
-14.APPMAX PRELOADER JS
-15. APPMAX COUNTER JS
-16. APPMAX WOW ANIMATION JS
+8.APPMAX SUBSCRIBE DYNAMIC JS
+9.APPMAX CONTACT FORM DYNAMIC JS
+10.APPMAX STICKU MENU
+11.APPMAX PRELOADER JS
+12. APPMAX COUNTER JS
+13. APPMAX WOW ANIMATION JS
 
 
 -------------------------------------------------------------------*/
@@ -279,7 +276,6 @@ if($('.banner-swiper-screenshot').is_exist()) {
 
 }
 
-// Banner Slider
 if($('#appmax-welcome-slider').is_exist()) {
 var owl = $('#appmax-welcome-slider');
 owl.owlCarousel({
@@ -294,43 +290,8 @@ owl.owlCarousel({
 }
 
 
-// Full Slider
-if($('#appmax-full-slide').is_exist()) {
-$( '#appmax-full-slide' ).sliderPro({
-  width: 2000,
-  height: 1050,
-  fade: true,
-  fadeOutPreviousSlide: true,
-  arrows: true,
-  buttons: true,
-  waitForLayers: true,
-  autoplay: false,
-  autoScaleLayers: false,
-  breakpoints: {
-    1500: {
-      height: 1400
-    },
-    1200: {
-      height: 1600
-    },
-    991: {
-      height: 1800
-    },
-    767: {
-      height: 1800
-    },
-    479: {
-      height: 2800
-    }
-  }
-
-});
-}
-
-
-
 /*--------------------------------------------------------------
- 9.APPMAX SUBSCRIBE DYNAMIC JS
+8.APPMAX SUBSCRIBE DYNAMIC JS
 --------------------------------------------------------------*/
 var $mc_form = $('#mc-form');
 if($mc_form.is_exist()) {
@@ -341,7 +302,7 @@ if($mc_form.is_exist()) {
 
 
 /*--------------------------------------------------------------
- 10.APPMAX CONTACT FORM DYNAMIC JS
+9.APPMAX CONTACT FORM DYNAMIC JS
 --------------------------------------------------------------*/
 var $appmax_cf = $('#appmax-contactForm');
 if($appmax_cf.is_exist()) {
@@ -407,16 +368,17 @@ if($appmax_cf.is_exist()) {
 }
 
 
-/*--------------------------------------------------------------
-11.INIT JARALLAX
---------------------------------------------------------------*/
+/* init Jarallax */
 var $appmax_jarallax = $('.jarallax');
 if($appmax_jarallax.is_exist()) {
+
   jarallax(document.querySelectorAll('.jarallax'));
   jarallax(document.querySelectorAll('.jarallax-keep-img'), {
       keepImg: true,
-  }); 
+  });
+  
 }
+
 var $appmax_hovellax = $('.appmax_hover_animation');
 if($appmax_hovellax.is_exist()) {
   $('.appmax_hover_animation').parallax();
@@ -424,38 +386,36 @@ if($appmax_hovellax.is_exist()) {
 
 
 
-/*--------------------------------------------------------------
-12.APPMAX SKEWED APPS SCREEN
---------------------------------------------------------------*/
-function showpanel() {
-  $('.appscraft-screen-container').removeClass('startup');
-  $('.ball').addClass('active').delay(2000).queue(function(next) {
-    $(this).removeClass('active');
-    next();
+
+// APPMAX SKEWED Apps Screen
+  function showpanel() {
+    $('.appscraft-screen-container').removeClass('startup');
+    $('.ball').addClass('active').delay(2000).queue(function(next) {
+      $(this).removeClass('active');
+      next();
+    });
+  }
+  
+  $('.ball').click(function() {
+    $(this).toggleClass('active');
   });
-}
 
-$('.ball').on('click', function() {
-  $(this).toggleClass('active');
-  return false;
-});
 
-$('i').on('click', function() {
-  $('.ball').addClass('expand');
-  $('.back').addClass('show');
-  return false;
-});
-
-$('.back').on('click', function() {
-  $(this).removeClass('show');
-  $('.ball').removeClass('expand');
-  $('.appscraft-screen-container').addClass('shake').delay(500).queue(function(next) {
-    $(this).removeClass('shake');
-    next();
+  $('i').click(function() {
+    $('.ball').addClass('expand');
+    $('.back').addClass('show');
   });
-  return false;
-});
-setTimeout(showpanel, 1800);
+
+  $('.back').click(function() {
+    $(this).removeClass('show');
+    $('.ball').removeClass('expand');
+    $('.appscraft-screen-container').addClass('shake').delay(500).queue(function(next) {
+      $(this).removeClass('shake');
+      next();
+    });
+  });
+  
+ setTimeout(showpanel, 1800);
 
 });/*End document ready*/
 
@@ -466,7 +426,7 @@ setTimeout(showpanel, 1800);
 
 $(window).on("load" ,function(){
 /*--------------------------------------------------------------
-13.APPMAX STICKU MENU
+10.APPMAX STICKU MENU
 ------------------------------------------------------------*/
 var $banner_promo = $('.appmax-banner-promo-section');
 if($banner_promo.is_exist()) {
@@ -482,7 +442,7 @@ if($banner_promo.is_exist()) {
 
 
 /*--------------------------------------------------------------
- 13.APPMAX PRELOADER JS
+ 11.APPMAX PRELOADER JS
  ------------------------------------------------------------*/
 $("#preloader").fadeOut(500);
 
@@ -494,7 +454,7 @@ $('body').addClass('appmax--loaded');
 
 
 /*--------------------------------------------------------------
-14. APPMAX COUNTER JS
+12. APPMAX COUNTER JS
 --------------------------------------------------------------*/
 var $counter = $('#counter');
 if($counter.is_exist()) {
@@ -511,6 +471,7 @@ if($counter.is_exist()) {
           }).animate({
               countNum: countTo
             },
+
             {
               duration: 4000,
               easing: 'swing',
@@ -533,7 +494,7 @@ if($counter.is_exist()) {
 
 
 /*--------------------------------------------------------------
-16. APPMAX WOW ANIMATION JS
+13. APPMAX WOW ANIMATION JS
 ------------------------------------------------------------*/
 var wow = new WOW({
   mobile: false,
